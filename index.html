@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/63c276db68.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 80vw;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        img {
+            width: 30%;
+            padding-top: 50px;
+        }
+
+        button {
+            position: absolute;
+            top: 7%;
+            left: calc(50% - 80px);
+            margin: 50px;
+            display: block;
+            padding: 10px;
+
+        }
+
+        .wrapper.active {
+            filter: blur(2px);
+
+        }
+
+        .modal-wrapper.active {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 70vh;
+            background-color: gray;
+            font-size: 0;
+
+
+        }
+
+        .top,
+        .middle,
+        .bottom {
+            height: 33.333%;
+            font-size: 16px;
+            text-align: center;
+            line-height: 200%;
+            vertical-align: middle;
+            padding: 5% 10%;
+        }
+
+        .top,
+        .bottom {
+            background-color: palegoldenrod;
+        }
+
+        .fa-x {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: black;
+            font-size: 30px;
+            width: 30px;
+
+
+        }
+
+        .randomButton{
+            margin-top: 100px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus nobis debitis deserunt possimus
+            reprehenderit incidunt repudiandae itaque placeat, est sed laborum distinctio! Eaque autem assumenda
+            voluptatibus porro cupiditate omnis perferendis nemo, modi qui veniam magnam soluta nesciunt. Maiores,
+            voluptas molestias aliquam consequatur quod dolore quia veniam iusto sequi deleniti velit rerum ipsa modi
+            mollitia beatae doloremque doloribus molestiae tempora repellendus accusamus! Facilis itaque repellendus in
+            accusantium, velit aliquid fuga officiis! Fuga, non? </div>
+        <button>Show now!</button>
+        <img src="https://picsum.photos/seed/picsum/200/300" alt="">
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus nobis debitis deserunt possimus
+            reprehenderit incidunt repudiandae itaque placeat, est sed laborum distinctio! Eaque autem assumenda
+            voluptatibus porro cupiditate omnis perferendis nemo, modi qui veniam magnam soluta nesciunt. Maiores,
+            voluptas molestias aliquam consequatur quod dolore quia veniam iusto sequi deleniti velit rerum ipsa modi
+            mollitia beatae doloremque doloribus molestiae tempora repellendus accusamus! Facilis itaque repellendus in
+            accusantium, velit aliquid fuga officiis! Fuga, non? </div>
+    </div>
+
+    <div class="modal-wrapper">
+        <div class="modal">
+            <button class="randomButton">Random button
+
+            </button>
+            <div class="top"><i class="fa-solid fa-x"></i>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores temporibus ducimus dolore sunt
+                    repellendus, laboriosam non eligendi blanditiis voluptate, sit consequuntur soluta aliquam quisquam
+                    accusamus et dolorem quidem, quaerat magni!</p>
+            </div>
+            <div class="middle">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eligendi repellendus quidem
+                    nesciunt, illum nam dolore sunt et. Culpa neque aliquam repellat, illum vitae modi harum iure magnam
+                    dolor earum?</p>
+            </div>
+            <div class="bottom">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique adipisci ducimus beatae nam
+                    blanditiis veritatis error exercitationem, vero ea eaque aperiam cum id ipsa velit vitae odit
+                    aspernatur repellendus natus.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis autem repudiandae, ipsum alias
+                    sed nulla adipisci, illo illum nisi rem error ab aspernatur maiores nemo praesentium earum, vitae
+                    doloremque dolore!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const button = document.querySelector('button');
+        const buttonOff = document.querySelector('.fa-x');
+        const modalWrapper = document.querySelector('.modal-wrapper');
+        const modal = document.querySelector('.modal');
+        const wrapper = document.querySelector('.wrapper');
+        const randomArray = ["spodnie", "bluza"];
+        const randomButton = document.querySelector('.randomButton');
+
+        button.addEventListener('click', function () {
+            modal.classList.add('active');
+            modalWrapper.classList.add('active');
+            wrapper.classList.add('active');
+        })
+        buttonOff.addEventListener('click', function () {
+            modal.classList.remove('active');
+            modalWrapper.classList.remove('active');
+            wrapper.classList.remove('active');
+        })
+
+
+    </script>
+</body>
+
+</html>
